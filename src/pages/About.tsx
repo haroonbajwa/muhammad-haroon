@@ -112,6 +112,7 @@ const skillCategories = {
   ],
   "Project Management & Collaboration": [
     { name: "JIRA", icon: <SiJira className="text-blue-600" /> },
+    { name: "Bitbucket", icon: <SiBitbucket className="text-blue-700" /> },
     { name: "Trello", icon: <SiTrello className="text-blue-600" /> },
     { name: "Slack", icon: <SiSlack className="text-purple-500" /> },
     {

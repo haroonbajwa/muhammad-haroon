@@ -3,11 +3,19 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Engine } from "tsparticles-engine";
 import profileImage from "../assets/haroon.png";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const particlesInit = async (engine: Engine) => {
     await loadSlim(engine);
   };
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <section className="min-h-[calc(100vh-8rem)] bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 flex items-center justify-center py-16 relative overflow-hidden">
       {/* Particles Background */}
@@ -47,12 +55,26 @@ const Home: React.FC = () => {
       />
 
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
-        {/* Left: Text */}
+        {/* Circular Image - Appears First on Mobile */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="mb-12 md:mb-0 md:w-1/2 flex justify-center order-1 md:order-2"
+        >
+          <img
+            src={profileImage}
+            alt="Muhammad Haroon"
+            className="w-64 h-64 md:w-96 md:h-96 rounded-full border-2 border-blue-500 shadow-2xl object-cover"
+          />
+        </motion.div>
+
+        {/* Text */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="text-center md:text-left md:w-1/2"
+          className="text-center md:text-left md:w-1/2 order-2 md:order-1"
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
             Hi, I’m <span className="text-blue-500">Muhammad Haroon</span>
@@ -64,27 +86,24 @@ const Home: React.FC = () => {
             Building scalable, innovative web solutions with a passion for
             real-time systems and cloud technology.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300"
-          >
-            Explore My Work
-          </motion.button>
-        </motion.div>
-
-        {/* Right: Circular Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-12 md:mt-0 md:w-1/2 flex justify-center"
-        >
-          <img
-            src={profileImage}
-            alt="Muhammad Haroon"
-            className="w-64 h-64 md:w-96 md:h-96 rounded-full border-2 border-blue-500 shadow-2xl object-cover"
-          />
+          <div className="flex justify-center md:justify-start space-x-4 mt-8">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavigate("/projects")}
+              className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300"
+            >
+              Explore My Work
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavigate("/about")}
+              className="px-6 py-3 bg-gray-600 text-white rounded-full font-semibold hover:bg-gray-700 transition duration-300"
+            >
+              About Me
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>
