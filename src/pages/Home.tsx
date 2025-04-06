@@ -80,7 +80,7 @@ const Home: React.FC = () => {
             Hi, I’m <span className="text-blue-500">Muhammad Haroon</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-6">
-            MERN Stack Developer | Automation Enthusiast
+            Full Stack JavaScript Developer | Automation Enthusiast
           </p>
           <p className="text-lg text-gray-400 max-w-md mx-auto md:mx-0">
             Building scalable, innovative web solutions with a passion for

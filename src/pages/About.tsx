@@ -199,11 +199,12 @@ const About: React.FC = () => {
 
         {/* Summary */}
         <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-          I’m Muhammad Haroon, a passionate MERN Stack Developer with over 3
-          years of experience crafting scalable, secure, and high-performance
-          web applications. I specialize in full-stack development, real-time
-          systems, and DevOps, delivering innovative solutions that blend
-          cutting-edge technology with seamless user experiences.
+          I'm Muhammad Haroon, a passionate Full Stack JavaScript Developer with
+          3+ years of experience building scalable, secure, and high-performance
+          web applications. I specialize in crafting end-to-end solutions,
+          real-time systems, and DevOps automation — delivering innovative
+          products that blend cutting-edge technology with seamless user
+          experiences.
         </p>
 
         {/* Skills by Category */}

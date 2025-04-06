@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import { Engine } from "tsparticles-engine";
 
 const projects = [
   {
@@ -29,8 +32,44 @@ const projects = [
 ];
 
 const Projects: React.FC = () => {
+  const particlesInit = async (engine: Engine) => {
+    await loadSlim(engine);
+  };
   return (
     <section className="min-h-screen bg-gray-900 py-16">
+      {/* Particles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          background: { color: { value: "transparent" } },
+          fpsLimit: 60,
+          particles: {
+            number: { value: 60, density: { enable: true, value_area: 800 } },
+            color: { value: "#3b82f6" },
+            shape: { type: "circle" },
+            opacity: { value: 0.4, random: true },
+            size: { value: 3, random: true },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: "none",
+              out_mode: "out",
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: { enable: true, mode: "repulse" },
+              onclick: { enable: true, mode: "push" },
+            },
+            modes: {
+              repulse: { distance: 100, duration: 0.4 },
+              push: { quantity: 4 },
+            },
+          },
+        }}
+        className="absolute inset-0 z-0"
+      />
       <div className="max-w-5xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0 }}
