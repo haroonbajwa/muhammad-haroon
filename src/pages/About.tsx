@@ -55,6 +55,7 @@ import {
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { VscTerminalPowershell, VscAzure } from "react-icons/vsc";
 import { TbBrandThreejs } from "react-icons/tb";
+import { FcLinux } from "react-icons/fc";
 
 const skillCategories = {
   Frontend: [
@@ -109,6 +110,7 @@ const skillCategories = {
       icon: <VscTerminalPowershell className="text-blue-600" />,
     },
     { name: "Server Deployment", icon: <FaAws className="text-orange-400" /> },
+    { name: "Linux", icon: <FcLinux /> },
   ],
   "Project Management & Collaboration": [
     { name: "JIRA", icon: <SiJira className="text-blue-600" /> },
