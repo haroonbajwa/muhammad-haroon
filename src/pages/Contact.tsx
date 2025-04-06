@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
           <input
             type="hidden"
             name="_next"
-            value="http://localhost:5173/success"
+            value="https://muhammadharoon.netlify.app/success"
           />{" "}
           {/* Update to live domain later */}
           <input type="hidden" name="_template" value="table" />
